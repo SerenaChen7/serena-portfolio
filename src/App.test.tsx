@@ -1,22 +1,16 @@
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import App from './App'
 
 describe('App', () => {
-  it('renders the starter content and increments the counter', async () => {
-    const user = userEvent.setup()
-
+  it('renders the afternoon tea portfolio scene and navigation', () => {
     render(<App />)
 
     expect(
-      screen.getByRole('heading', { name: 'Get started' }),
+      screen.getByRole('heading', { name: 'Serena Chen’s Portfolio' }),
     ).toBeInTheDocument()
-
-    const counter = screen.getByRole('button', { name: 'Count is 0' })
-
-    await user.click(counter)
-
-    expect(counter).toHaveTextContent('Count is 1')
+    expect(screen.getByRole('navigation', { name: 'Portfolio sections' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Projects/ })).toBeInTheDocument()
+    expect(screen.getByAltText('Six cake slices arranged as a round cake')).toBeInTheDocument()
   })
 })
