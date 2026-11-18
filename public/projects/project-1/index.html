@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Interactive WebGL Sphere Game</title>
+	</head>
+	<style>
+		html,
+		body {
+		  width: 100%;
+		  height: 100%;
+		  margin: 0;
+		  background: #000;
+		}
+		body {
+		  display: grid;
+		  place-items: center;
+		  overflow: hidden;
+		}
+		.container {
+		  position: relative;
+		  width: min(600px, 100vw, 100vh);
+		  aspect-ratio: 1;
+		}
+		#webgl {
+		  display: block;
+		  width: 100%;
+		  height: 100%;
+		}
+		#integrator {
+		  position: absolute;
+		  left: 0;
+		  top: 2px;
+		  background-color: rgba(0, 0, 0, 0.0);
+		  color: white;
+		  font-family: serif;
+		  padding: 1em;
+		}
+		#mid {
+		    position: absolute;
+		    left: 21.666%;
+		    top: 55.833%;
+		    background-color: rgba(0, 0, 0, 0.0);
+		    color: rgb(163, 204, 158);
+		    font-family: serif;
+		    padding: 1em;
+		    font-size: clamp(16px, 3.66vw, 22px);
+		  }
+	</style>
+	<body>
+	  <div class="container">
+		<div id="integrator">
+		  <div>Health: <span id="health"></span></div>
+		  <div>Score: <span id="score"></span></div>
+		 
+		</div>
+		<div id="mid">
+		  <div><span id="stat"></span></div>
+		</div>
+		<canvas id="webgl" width="600" height="600">
+		Please use a browser that supports "canvas"
+		</canvas>
+	  </div>
+		<script src="./lib/webgl-utils.js"></script>
+		<script src="./lib/webgl-debug.js"></script>
+		<script src="./lib/cuon-utils.js"></script>
+		<script src="./lib/cuon-matrix.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
